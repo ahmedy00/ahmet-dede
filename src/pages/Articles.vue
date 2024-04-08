@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>Articles</div>
+  <div class="animate-slide-up">Articles</div>
 </template>
 
 <style scoped>

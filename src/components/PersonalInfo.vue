@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="d-flex items-center md:py-36 py-4 md:text-start text-center">
+  <div class="d-flex items-center md:py-36 py-4 md:text-start text-center animate-slide-up">
     <h3 class="py-2 text-2xl">Hello <span class="text-primary">I'm</span></h3>
     <h1 class="text-primary py-2 text-4xl font-bold">Ahmet DEDE</h1>
     <h3 class="text-2xl py-2">Frontend Developer</h3>

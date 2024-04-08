@@ -11,7 +11,7 @@ const routes = ['home', 'articles', 'projects', 'contact']
 
 <template>
   <header>
-    <nav class="py-6 lg:px-48 md:px-32 px-8">
+    <nav class="py-6 lg:px-72 md:px-32 px-8">
       <div class="flex flex-wrap items-center justify-between">
         <RouterLink to="/">
           <span class="text-xl">Ahmet </span>
