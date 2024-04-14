@@ -10,7 +10,7 @@ import PersonalImage from '../components/PersonalImage.vue'
       <PersonalInfo />
       <PersonalImage />
     </div>
-    <div class="flex justify-center md:mt-48 mt-16 text-primary space-x-8">
+    <div class="flex justify-center md:mt-48 mt-16 text-primary space-x-8 animate-slide-up md:animate-none">
       <a href="https://www.github.com/ahmedy00" target="_blank">
         <mdicon name="github" :size="36" />
       </a>

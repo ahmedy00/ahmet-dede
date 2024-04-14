@@ -11,10 +11,12 @@ const app = document.getElementById('app')
 
 const toggleTheme = () => {
   mode.value = mode.value === 'dark' ? 'light' : 'dark'
-  app.style.animation = 'themeFade 1s'
-  setTimeout(() => {
+  if (!!app) {
+    app.style.animation = 'themeFade 1s'
+    setTimeout(() => {
       app.style.animation = ''
     }, 1000)
+  }
 }
 
 </script>
@@ -28,21 +30,13 @@ const toggleTheme = () => {
           <span class="text-xl font-bold text-primary">Dede</span>
         </RouterLink>
         <div class="md:flex hidden items-center space-x-4">
-<!--          <span v-for="(route, index) in routes" :key="index" class="uppercase">-->
-<!--            <RouterLink-->
-<!--              :to="`/${route}`"-->
-<!--              :class="{'text-primary': router.fullPath === `/${route}`}"-->
-<!--              class="px-4 py-2 hover:bg-primary/40 rounded-sm transition duration-300 ease-in-out"-->
-<!--            >-->
-<!--              {{ route }}-->
-<!--            </RouterLink>-->
-<!--          </span>-->
-          <span v-for="(route, index) in routes" :key="index" class="uppercase relative overflow-hidden">
-            <RouterLink :to="`/${route}`"
-                        :class="{'text-primary': router.fullPath === `/${route}`}"
-                        class="px-4 py-2 rounded-sm relative z-10">
+          <span v-for="(route, index) in routes" :key="index" class="uppercase">
+            <RouterLink
+              :to="`/${route}`"
+              :class="{'text-primary': router.fullPath === `/${route}`}"
+              class="px-4 py-2 hover:bg-primary/40 rounded-sm transition duration-300 ease-in-out"
+            >
               {{ route }}
-              <div class="absolute top-0 left-0 w-full h-full bg-primary/40 z-0" :class="{'hover:animate-slideDown': router.fullPath !== `/${route}` }"></div>
             </RouterLink>
           </span>
         </div>
