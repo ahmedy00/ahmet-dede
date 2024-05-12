@@ -25,6 +25,16 @@
         const namespaceURI = "http://purl.org/rss/1.0/modules/content/"
         let description = item.getElementsByTagNameNS(namespaceURI, 'encoded')[0]?.textContent
 
+        // Remove images from description
+        if (description) {
+          const htmlDoc = parser.parseFromString(description, 'text/html')
+          const figures = htmlDoc.querySelectorAll('figure')
+          figures.forEach(figure => {
+            figure.parentNode?.removeChild(figure)
+          })
+          description = htmlDoc.body.innerHTML
+        }
+
         // Limit description to numberOfWords
         const numberOfWords = 100
         let words = description?.split(/\s+/)
@@ -45,7 +55,7 @@
 
 <template>
   <div class="animate-slide-up mt-12">
-    <div v-for="item in items" :key="`${item.title}`">
+    <div v-for="item in items" :key="`${item.title}`" class="mb-8">
       <div class="p-6 bg-primary border rounded-lg shadow">
         <a :href="item.link || 'https://medium.com/@ahmetdede'">
           <h5 class="mb-2 text-2xl font-bold tracking-tight">{{ item.title }}</h5>
