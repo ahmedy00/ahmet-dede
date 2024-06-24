@@ -9,8 +9,10 @@
   }
 
   const items = ref<articleType[]>()
+  const isFetching = ref(false)
 
   const fetchArticles = async () => {
+    isFetching.value = true
     const proxyUrl = 'https://api.allorigins.win/get?url='
     const feedUrl = encodeURIComponent('https://medium.com/feed/@ahmetdede')
     const url = `${proxyUrl}${feedUrl}`
@@ -43,6 +45,7 @@
         }
         return { title, link, description }
       })
+      isFetching.value = false
     } catch (error) {
       console.log('error', error)
     }
@@ -54,7 +57,9 @@
 </script>
 
 <template>
-  <div class="animate-slide-up mt-12">
+  <div v-if="isFetching" class="animate-spin-custom border-2 border-[#F3F3F3] rounded-full border-t-2 border-t-primary w-8 h-8 absolute left-[50%] top-[40%]" />
+  <div v-if="isFetching" class="absolute left-[40%] top-[45%]">Please wait while articles fetching.</div>
+  <div v-if="!isFetching" class="animate-slide-up mt-12">
     <div v-for="item in items" :key="`${item.title}`" class="mb-8">
       <div class="p-6 bg-primary border rounded-lg shadow">
         <a :href="item.link || 'https://medium.com/@ahmetdede'">
