@@ -34,4 +34,16 @@
   .animate-slide-down {
     animation: slide-down .75s ease-out forwards;
   }
+
+  @keyframes spin-custom {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-custom {
+    animation: spin-custom 1s linear infinite;
+  }
 }
