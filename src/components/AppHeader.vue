@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 const mode = useColorMode()
 const router = useRoute()
 
-const routes = ['home', 'articles', 'projects', 'contact']
+const routes = ['home', 'articles', 'projects']
 
 const app = document.getElementById('app')
 
