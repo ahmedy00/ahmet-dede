@@ -17,6 +17,9 @@ import PersonalImage from '../components/PersonalImage.vue'
       <a href="https://www.linkedin.com/in/ahmet-dede/" target="_blank">
         <mdicon name="linkedin" :size="36" />
       </a>
+      <a href="mailto:mail@ahmetdede.com">
+        <mdicon name="email" :size="36" />
+      </a>
     </div>
   </div>
 </template>

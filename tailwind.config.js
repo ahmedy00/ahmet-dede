@@ -13,7 +13,7 @@ export default {
         display: ['Poppins', 'sans'],
       },
       colors: {
-        primary: '#FF9800',
+        primary: '#910967',
         light: {
           background: '#FFFFFF',
           text: '#F3F3F3'

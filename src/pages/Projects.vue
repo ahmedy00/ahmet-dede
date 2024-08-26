@@ -4,7 +4,7 @@ import projects from '../utils/projects.ts'
 </script>
 
 <template>
-  <div class="animate-slide-down grid lg:grid-cols-2 grid-cols-1 gap-12 mt-12">
+  <div class="animate-slide-down grid lg:grid-cols-2 grid-cols-1 gap-12 mt-12 mb-8">
     <div v-for="(project, index) in projects" :key="`project-${index}`" class="bg-primary border rounded-lg shadow">
       <div class="p-5 text-light-text">
         <h5 class="text-2xl font-bold tracking-tight text-center mt-4 mb-8">{{ project.name }}</h5>
